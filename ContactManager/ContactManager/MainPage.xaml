@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ContactManager.MainPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.25*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Label Text="Contact Manager" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="White" TextColor="CornflowerBlue"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Title">
+            <Label.FormattedText>
+                <FormattedString/>
+            </Label.FormattedText>
+        </Label>
+
+        <Label Text="Contact Manager &lt;/strong;&gt; " TextType="Html" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Title" TextColor="CornflowerBlue" Margin="10,5"/>
+
+        <Label Text="Please select your ID from the picker to manage your contact details." Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="White" VerticalTextAlignment="Center" Margin="10,5"/>
+
+        <Label Text="ID:" Grid.Column="0" Grid.Row="2" BackgroundColor="White" VerticalTextAlignment="Center" Margin="20,5,5,5" />
+        <Picker x:Name="pckID" Title="Select your ID" ItemsSource="{Binding contacts}" ItemDisplayBinding="{Binding ID}" Grid.Column="1" Grid.Row="2" BackgroundColor="White" Margin="5,5,20,5" 
+                SelectedIndexChanged="pckID_selected"/>
+        <Picker.Items>
+            <x:String>001</x:String>
+            <x:String>002</x:String>
+            <x:String>003</x:String>
+            <x:String>004</x:String>
+        </Picker.Items>
+
+
+
+        <Label Text="Your contact details:" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" BackgroundColor="White" TextColor="CornflowerBlue" VerticalTextAlignment="Center" Margin="10,5"/>
+
+        <Label Text="First name:" Grid.Column="0" Grid.Row="4" BackgroundColor="White" VerticalTextAlignment="Center" Margin="20,5,5,5" />
+        <Entry Placeholder="Enter your details here" Grid.Column="1" Grid.Row="4" BackgroundColor="White" VerticalTextAlignment="Center" Margin="5,5,20,5" 
+               x:Name="entFirstName"/>
+        
+        <Label Text="Last name:" Grid.Column="0" Grid.Row="5" BackgroundColor="White" VerticalTextAlignment="Center" Margin="20,5,5,5" />
+        <Entry Placeholder="Enter your details here" Grid.Column="1" Grid.Row="5" BackgroundColor="White" VerticalTextAlignment="Center" Margin="5,5,20,5" 
+               x:Name="entLastName"/>
+
+        <Label Text="Mobile number:" Grid.Column="0" Grid.Row="6" BackgroundColor="White" VerticalTextAlignment="Center" Margin="20,5,5,5" />
+        <Entry Placeholder="Enter your details here" Grid.Column="1" Grid.Row="6" BackgroundColor="White" VerticalTextAlignment="Center" Margin="5,5,20,5" 
+               x:Name="entMobile"/>
+        
+        <Label Text="Email:" Grid.Column="0" Grid.Row="7" BackgroundColor="White" VerticalTextAlignment="Center" Margin="20,5,5,5" />
+        <Entry Placeholder="Enter your details here" Grid.Column="1" Grid.Row="7" BackgroundColor="White" VerticalTextAlignment="Center" Margin="5,5,20,5" 
+               x:Name="entEmail"/>
+
+        <Button Text="Modify:" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="8" BackgroundColor="CornflowerBlue" TextColor="White" Margin="10,5" 
+                x:Name="btnModify"
+                Clicked="BtnModify_clicked"/>
+        
+        <Button Text="Delete:" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="9" BackgroundColor="CornflowerBlue" TextColor="White" Margin="10,5" 
+                x:Name="btnDelete"
+                Clicked="BtnDelete_clicked"/>
+
+    </Grid>
+
+
+
+</ContentPage>
