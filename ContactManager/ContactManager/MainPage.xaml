@@ -36,15 +36,14 @@
 
         <Label Text="ID:" Grid.Column="0" Grid.Row="2" BackgroundColor="White" VerticalTextAlignment="Center" Margin="20,5,5,5" />
         <Picker x:Name="pckID" Title="Select your ID" ItemsSource="{Binding contacts}" ItemDisplayBinding="{Binding ID}" Grid.Column="1" Grid.Row="2" BackgroundColor="White" Margin="5,5,20,5" 
-                SelectedIndexChanged="pckID_selected"/>
-        <Picker.Items>
+                SelectedIndexChanged="pckID_selected">
+            <Picker.Items>
             <x:String>001</x:String>
             <x:String>002</x:String>
             <x:String>003</x:String>
             <x:String>004</x:String>
         </Picker.Items>
-
-
+        </Picker>
 
         <Label Text="Your contact details:" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" BackgroundColor="White" TextColor="CornflowerBlue" VerticalTextAlignment="Center" Margin="10,5"/>
 
