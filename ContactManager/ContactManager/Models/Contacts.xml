@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContactManager>
+	<Contact>
+		<ID>001</ID>
+		<FirstName>John</FirstName>
+		<LastName>Smith	</LastName>
+		<Mobile>0411123456</Mobile>
+		<Email>jsmith@mail.com</Email>
+	</Contact>
+	<Contact>
+		<ID>002</ID>
+		<FirstName>Mary</FirstName>
+		<LastName>Jones</LastName>
+		<Mobile>0411456789</Mobile>
+		<Email>mjones@mail.com</Email>
+	</Contact>
+	<Contact>
+		<ID>003</ID>
+		<FirstName>Rick</FirstName>
+		<LastName>Spanner</LastName>
+		<Mobile>0411789123</Mobile>
+		<Email>rspanner@mail.com</Email>
+	</Contact>
+	<Contact>
+		<ID>004</ID>
+		<FirstName>Margaret</FirstName>
+		<LastName>Wilson</LastName>
+		<Mobile>0411159753</Mobile>
+		<Email>mwilson@mail.com</Email>
+	</Contact>
+</ContactManager>

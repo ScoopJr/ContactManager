@@ -25,17 +25,16 @@ namespace ContactManager
 
         private void GetXML()
         {
-            
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var fileName = Path.Combine(path, "ContactManager.XML");
+            var assembly = typeof(MainPage).GetTypeInfo().Assembly;
+            Stream stream = assembly.GetManifestResourceStream("ContactManager.Models.Contacts.xml");
 
-            using (var reader = new StreamReader(fileName))
+            using (var reader = new StreamReader(stream))
             {
                 var serializer = new XmlSerializer(typeof(List<Contact>), new XmlRootAttribute("ContactManager"));
                 contacts = (List<Contact>)serializer.Deserialize(reader);
             }
             pckID.ItemsSource = contacts;
-            
+
 
 
             /*
@@ -52,7 +51,7 @@ namespace ContactManager
         }
 
         private void pckID_selected(object sender, EventArgs e)
-        //                SelectedIndexChanged="PickerItems_selected" 
+        //                SelectedIndexChanged="PickerItems_selected"
         {
             try
             {
@@ -122,7 +121,7 @@ namespace ContactManager
 
             var writableFile = Path.Combine(System.Environment.GetFolderPath(
                 System.Environment.SpecialFolder.Personal), "ContactManager.xml");
-            
+
             if (!File.Exists(writableFile))
             {
                 var fileStream = File.OpenWrite(writableFile);
