@@ -27,12 +27,9 @@ namespace ContactManager
         {
             var assembly = typeof(MainPage).GetTypeInfo().Assembly;
             Stream stream = assembly.GetManifestResourceStream("ContactManager.Models.Contacts.xml");
-
-            using (var reader = new StreamReader(stream))
-            {
-                var serializer = new XmlSerializer(typeof(List<Contact>), new XmlRootAttribute("ContactManager"));
-                contacts = (List<Contact>)serializer.Deserialize(reader);
-            }
+            ObservableCollection<ContactManager> contacts;
+            var serializer = new XmlSerializer(typeof(List<Contact>), new XmlRootAttribute("ContactManager"));
+            contacts = (List<Contact>)serializer.Deserialize(reader);
             pckID.ItemsSource = contacts;
 
 
